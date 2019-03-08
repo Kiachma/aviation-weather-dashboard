@@ -1,0 +1,5 @@
+<div *ngIf="info.hasOwnProperty('runways')">
+<span *ngFor="let rwy of info.runways" >
+   RWY {{getRwyInUse(rwy)}}: XW: {{getCrosswind(rwy)}} HW: {{getHeadwind(rwy)}}
+</span>
+</div>

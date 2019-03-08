@@ -1,0 +1,3 @@
+<div  style="text-align: left" class="mat-body-1"  class="fill-remaining-space" [ngClass]="{'VFR': metar['Flight-Rules']=='VFR', 'MVFR':  metar['Flight-Rules']=='MVFR', 'IFR':  metar['Flight-Rules']=='IFR', 'LIFR': metar['Flight-Rules']=='LIFR'}">
+	{{metar["Sanitized"]}}
+</div>

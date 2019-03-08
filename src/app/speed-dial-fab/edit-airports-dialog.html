@@ -1,0 +1,47 @@
+<mat-form-field class="example-chip-list">
+  <h3>Airports</h3>
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let airport of airportService.airports; let i = index" [selectable]="selectable"
+             [removable]="removable" (removed)="deleteAirport(i)">
+      {{airport}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="Enter ICAO code"
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <h3>Visible</h3>
+  <mat-slide-toggle
+    [(ngModel)]="airportService.visible.sigmet">
+
+    Sigmet chart
+  </mat-slide-toggle>
+  <mat-slide-toggle
+  [(ngModel)]="airportService.visible.sigchart"
+          >
+    Sig-WX chart
+  </mat-slide-toggle>
+  <mat-slide-toggle
+  [(ngModel)]="airportService.visible.radar"
+          >
+    Radar image
+  </mat-slide-toggle>
+  <mat-slide-toggle
+  [(ngModel)]="airportService.visible.ceiling"
+          >
+    Windy (Sky base)
+  </mat-slide-toggle>
+  <mat-slide-toggle
+  [(ngModel)]="airportService.visible.visibility"
+          >
+    Windy (Visibility)
+  </mat-slide-toggle>
+   <mat-slide-toggle
+  [(ngModel)]="airportService.visible.lightning"
+          >
+    Windy (Lightning)
+  </mat-slide-toggle>
+</mat-form-field>
+

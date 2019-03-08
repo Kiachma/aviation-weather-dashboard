@@ -1,0 +1,429 @@
+{
+  "ENGM": {
+    "url": "Norge/Akershus/Ullensaker/Oslo_lufthavn,_Gardermoen/",
+    "rwyDeg":[264.87]
+  },
+  "ENRO": {
+    "url": "Norge/S%C3%B8r-Tr%C3%B8ndelag/R%C3%B8ros/R%C3%B8ros_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENFG": {
+    "url": "Norge/Oppland/Nord-Aurdal/Fagernes_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENHD": {
+    "url": "Norge/Rogaland/Karm%C3%B8y/Haugesund_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENML": {
+    "url": "Norge/M%C3%B8re_og_Romsdal/Molde/Molde_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENKB": {
+    "url": "Norge/M%C3%B8re_og_Romsdal/Kristiansund/Kristiansund_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENNM": {
+    "url": "Norge/Nord-Tr%C3%B8ndelag/Namsos/Namsos_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENRM": {
+    "url": "Norge/Nord-Tr%C3%B8ndelag/Vikna/R%C3%B8rvik_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENBN": {
+    "url": "Norge/Nordland/Br%C3%B8nn%C3%B8y/Br%C3%B8nn%C3%B8ysund_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENMS": {
+    "url": "Norge/Nordland/Vefsn/Mosj%C3%B8en_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENRA": {
+    "url": "Norge/Nordland/Rana/Mo_i_Rana_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENNK": {
+    "url": "Norge/Nordland/Narvik/Narvik_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENEV": {
+    "url": "Norge/Nordland/Evenes/Evenes_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENSH": {
+    "url": "Norge/Nordland/V%C3%A5gan/Svolv%C3%A6r_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENLK": {
+    "url": "Norge/Nordland/Vestv%C3%A5g%C3%B8y/Leknes_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENRS": {
+    "url": "Norge/Nordland/R%C3%B8st/R%C3%B8st_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENSK": {
+    "url": "Norge/Nordland/Hadsel/Stokmarknes_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENTC": {
+    "url": "Norge/Troms/Troms%C3%B8/Troms%C3%B8_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENSR": {
+    "url": "Norge/Troms/Nordreisa/S%C3%B8rkjosen_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENAT": {
+    "url": "Norge/Finnmark/Alta/Alta_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENHV": {
+    "url": "Norge/Finnmark/Nordkapp/Honningsv%C3%A5g_lufthavn,_Valan/",
+    "rwyDeg":[264.87]
+  },
+  "ENNA": {
+    "url": "Norge/Finnmark/Porsanger/Lakselv_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENMH": {
+    "url": "Norge/Finnmark/Gamvik/Mehamn_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENBV": {
+    "url": "Norge/Finnmark/Berlev%C3%A5g/Berlev%C3%A5g_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENBS": {
+    "url": "Norge/Finnmark/B%C3%A5tsfjord/B%C3%A5tsfjord_lufthavn/",
+    "rwyDeg":[264.87]
+  },
+  "ENSS": {
+    "url": "Norge/Finnmark/Vard%C3%B8/Vard%C3%B8_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENVD": {
+    "url": "Norge/Finnmark/Vads%C3%B8/Vads%C3%B8_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENKR": {
+    "url": "Norge/Finnmark/S%C3%B8r-Varanger/Kirkenes_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENSB": {
+    "url": "Norge/Svalbard/Svalbard_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENHK": {
+    "url": "Norge/Finnmark/Hasvik/Hasvik_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "ENST": {
+    "url": "Norge/Nordland/Alstahaug/Sandnessj%C3%B8en_lufthavn,_Stokka/",
+    "rwyDeg":[264.87]
+  },
+  "ENVA": {
+    "url": "Norge/Nord-Tr%C3%B8ndelag/Stj%C3%B8rdal/Trondheim_lufthavn,_V%C3%A6rnes/",
+    "rwyDeg":[264.87]
+  },
+  "ENAN": {
+    "url": "Norge/Nordland/And%C3%B8y/And%C3%B8ya_lufthavn,_Andenes/",
+    "rwyDeg":[264.87]
+  },
+  "ENZV": {
+    "url": "Norge/Rogaland/Sola/Stavanger_lufthavn,_Sola/",
+    "rwyDeg":[264.87]
+  },
+  "ENOL": {
+    "url": "Norge/S%C3%B8r-Tr%C3%B8ndelag/%C3%98rland/%C3%98rland_lufthavn/",
+    "rwyDeg":[264.87]
+  },
+  "ENVY": {
+    "url": "Norge/Nordland/V%C3%A6r%C3%B8y/V%C3%A6r%C3%B8y_lufthavn/",
+    "rwyDeg":[264.87]
+  },
+  "ENAL": {
+    "url": "Norge/M%C3%B8re_og_Romsdal/Giske/%C3%85lesund_lufthavn,_Vigra/",
+    "rwyDeg":[264.87]
+  },
+  "ENRY": {
+    "url": "Norge/%C3%98stfold/R%C3%A5de/Moss_lufthavn,_Rygge/",
+    "rwyDeg":[264.87]
+  },
+  "ENLI": {
+    "url": "Norge/Vest-Agder/Farsund/Farsund_lufthavn,_Lista/",
+    "rwyDeg":[264.87]
+  },
+  "ENSD": {
+    "url": "Norge/Sogn_og_Fjordane/Gloppen/Sandane_lufthamn,_Anda/",
+    "rwyDeg":[264.87]
+  },
+  "ENHF": {
+    "url": "Norge/Finnmark/Hammerfest/Hammerfest_lufthavn/",
+    "rwyDeg":[264.87]
+  },
+  "ENTO": {
+    "url": "Norge/Vestfold/Sandefjord/Sandefjord_lufthavn,_Torp/",
+    "rwyDeg":[264.87]
+  },
+  "ENBR": {
+    "url": "Norge/Hordaland/Bergen/Bergen_lufthavn,_Flesland/",
+    "rwyDeg":[264.87]
+  },
+  "ENSN": {
+    "url": "Norge/Telemark/Skien/Skien_lufthavn,_Geiteryggen/",
+    "rwyDeg":[264.87]
+  },
+  "ENCN": {
+    "url": "Norge/Vest-Agder/Kristiansand/Kristiansand_lufthavn,_Kjevik/",
+    "rwyDeg":[264.87]
+  },
+  "ENDU": {
+    "url": "Norge/Troms/M%C3%A5lselv/Bardufoss_lufthavn~296475/",
+    "rwyDeg":[264.87]
+  },
+  "ENBO": {
+    "url": "Norge/Nordland/Bod%C3%B8/Bod%C3%B8_lufthavn_m%C3%A5lestasjon/",
+    "rwyDeg":[264.87]
+  },
+  "EFTU": {
+    "url": "Finland/V%C3%A4stra_Finland/Turku_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFMA": {
+    "url": "%C3%85land/Jomala/Mariehamn_Airport/",
+    "rwyDeg": [203.38]
+  },
+  "EFHK": {
+    "url": "Finland/Southern_Finland/Helsinki-Vantaa_Airport/",
+    "rwyDeg": [47.47,153.04]
+  },
+  "EFUT": {
+    "url": "Finland/Södra_Finland/Utti_Airport/",
+    "rwyDeg":[258.06]
+  },
+  "EFLP": {
+    "url": "Finland/Södra_Finland/Lappeenranta_Airport/",
+    "rwyDeg":[246.76]
+  },
+  "EFPO": {
+    "url": "Finland/Västra_Finland/Pori_Airport/",
+    "rwyDeg":[125.77,173.89]
+  },
+  "EFTP": {
+    "url": "Finland/Västra_Finland/Tampere–Pirkkala_Airport/",
+    "rwyDeg":[64.44]
+  },
+  "EFHA": {
+    "url": "Finland/Västra_Finland/Halli_Airport/",
+    "rwyDeg":[86.08]
+  },
+  "EFMI": {
+    "url": "Finland/Östra_Finland/Mikkeli_Airport/",
+    "rwyDeg":[112.59]
+  },
+  "EFSA": {
+    "url": "Finland/Östra_Finland/Savonlinna_Airport/",
+    "rwyDeg":[125.66]
+  },
+  "EFVA": {
+    "url": "Finland/Västra_Finland/Vaasa_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFSI": {
+    "url": "Finland/Västra_Finland/Seinajoki-Ilmajok_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFJY": {
+    "url": "Finland/Västra_Finland/Jyväskylä_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFKU": {
+    "url": "Finland/Östra_Finland/Kuopio_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFJO": {
+    "url": "Finland/Östra_Finland/Joensuu_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFKK": {
+    "url": "Finland/Västra_Finland/Kokkola-Pietarsaari_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFKI": {
+    "url": "Finland/Uleåborg/Kajaani_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFOU": {
+    "url": "Finland/Uleåborg/Oulu_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFKE": {
+    "url": "Finland/Lappland/Kemi~6296547/",
+    "rwyDeg":[264.87]
+  },
+  "EFKS": {
+    "url": "Finland/Uleåborg/Kuusamo_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFRO": {
+    "url": "Finland/Lappland/Rovaniemi_Airport/",
+    "rwyDeg":[264.87]
+  },
+  "EFKT": {
+    "url": "Finland/Lappland/Kittilä/",
+    "rwyDeg":[264.87]
+  },
+  "EFET": {
+    "url": "Finland/Lappland/Enontekiö_Airport//",
+    "rwyDeg":[264.87]
+  },
+  "EFIV": {
+    "url": "Finland/Lappland/Ivalo_Airport/"
+  },
+  "ENNO": {
+    "url": "Norge/Telemark/Notodden/Notodden_flyplass,_Tuven/"
+  },
+  "ENGK": {
+    "url": "Norge/Aust-Agder/Froland/Gullknapp/"
+  },
+  "ENKJ": {
+    "url": "Norge/Akershus/Skedsmo/Kjeller_flyplass/"
+  },
+  "ESGG": {
+    "url": "/Sverige/Västra_Götaland/Gothenburg-Landvetter_Airport/"
+  },
+  "ESMS": {
+    "url": "/Sverige/Skåne/Malmö¤002fSturup/"
+  },
+  "ESMS": {
+    "url": "/Sverige/Skåne/Malmö¤002fSturup/"
+  },
+  "ESMK": {
+    "url": "Sverige/Skåne/Kristianstad_Airport/"
+  },
+  "ESTL": {
+    "url": "Sverige/Skåne/Ljungbyhed/"
+  },
+  "ESTA": {
+    "url": "Sverige/Skåne/Ängelholm-Helsingborg_Airport/"
+  },
+  "ESDF": {
+    "url": "Sverige/Blekinge/Ronneby_lufthavn/"
+  },
+  "ESMT": {
+    "url": "Sverige/Halland/Halmstad_Airport/"
+  },
+  "ESMX": {
+    "url": "Sverige/Kronoberg/Växjö_Småland_Airport/"
+  },
+  "ESMQ": {
+    "url": "Sverige/Kalmar/Kalmar~2702263/"
+  },
+  "ESGJ": {
+    "url": "Sverige/Jönköping/Jönköping_lufthavn/"
+  },
+  "ESSV": {
+    "url": "Sverige/Gotland/Visby_lufthavn/"
+  },
+  "ESGT": {
+    "url": "Sverige/Västra_Götaland/Trollhättan_Vänersborgs_flygplats/"
+  },
+  "ESIB": {
+    "url": "Sverige/Västra_Götaland/Såtenäs/"
+  },
+  "ESIB": {
+    "url": "Sverige/Västra_Götaland/Skövde_Airport/"
+  },
+  "ESIA": {
+    "url": "Sverige/Västra_Götaland/Karlsborg/"
+  },
+  "ESCF": {
+    "url": "Sverige/Östergötland/Linköping_City_Airport/"
+  },
+  "ESSL": {
+    "url": "Sverige/Östergötland/Linköping_City_Airport/"
+  },
+  "ESSP": {
+    "url": "Sverige/Östergötland/Norrköping_Airport/"
+  },
+  "ESKN": {
+    "url": "Sverige/Södermanland/Stockholm¤002fSkavsta/"
+  },
+  "ESSB": {
+    "url": "Sverige/Stockholm/Stockholm-Bromma_Airport/"
+  },
+  "ESSA": {
+    "url": "Sverige/Stockholm/Stockholm-Arlanda_Airport/"
+  },
+  "ESOE": {
+    "url": "Sverige/Örebro/Örebro_Airport/"
+  },
+  "ESOW": {
+    "url": "Sverige/Västmanland/Stockholm-Västerås_Airport/"
+  },
+  "ESCM": {
+    "url": "Sverige/Uppsala/Uppsala/"
+  },
+  "ESOK": {
+    "url": "Sverige/Värmland/Karlstad~6296810/"
+  },
+  "ESST": {
+    "url": "Sverige/Värmland/Torsby_Airport/"
+  },
+  "ESSD": {
+    "url": "Sweden/Dalarna/Borlänge/"
+  },
+  "ESKM": {
+    "url": "Sverige/Dalarna/Mora-Siljan_Airport/"
+  },
+  "ESND": {
+    "url": "Sverige/Jämtland/Sveg~2670062/"
+  },
+  "ESNN": {
+    "url": "Sverige/Västernorrland/Sundsvall-Härnösand_Airport/"
+  },
+  "ESNK": {
+    "url": "Sverige/Västernorrland/Kramfors_Flygplats/"
+  },
+  "ESNZ": {
+    "url": "Sverige/Jämtland/Östersund¤002fFrösön/"
+  },
+  "ESNO": {
+    "url": "Sverige/Västernorrland/Örnsköldsvik/"
+  },
+  "ESNU": {
+    "url": "Sverige/Västerbotten/Umeå/"
+  },
+  "ESNV": {
+    "url": "Sverige/Västerbotten/Vilhelmina~2662936/"
+  },
+  "ESNL": {
+    "url": "Sverige/Västerbotten/Lycksele_Airport/"
+  },
+  "ESNS": {
+    "url": "Sverige/Västerbotten/Skellefteå_lufthavn/"
+  },
+  "ESPA": {
+    "url": "Sverige/Norrbotten/Kallax/"
+  },
+  "ESNX": {
+    "url": "Sverige/Norrbotten/Arvidsjaur~6452624/"
+  },
+  "ESPE": {
+    "url": "Sverige/Norrbotten/Vidsel~601982/"
+  },
+  "ESUP": {
+    "url": "Sverige/Norrbotten/Pajala_Airport/"
+  },
+  "ESNG": {
+    "url": "Sverige/Norrbotten/Gällivare_flyplass/"
+  },
+  "ESNQ": {
+    "url": "Sverige/Norrbotten/Kiruna~605156/"
+  }
+  
+  
+}
+
