@@ -1,6 +1,5 @@
-<div style="text-align: left" class="mat-body-1 fill-remaining-space">
+<div style="text-align: left" class="fill-remaining-space">
      {{icao}}
-
 	<span *ngFor="let forecast of taf['Forecast']" class="fill-remaining-space" [ngClass]="{'VFR': forecast['Flight-Rules']=='VFR', 'MVFR':  forecast['Flight-Rules']=='MVFR', 'IFR': forecast['Flight-Rules']=='IFR', 'LIFR': forecast['Flight-Rules']=='LIFR'}">
 		{{forecast["Sanitized"]}}
 	</span>

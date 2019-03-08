@@ -30,7 +30,7 @@ export class WindComponent implements OnInit {
     });
   }
   getCrosswind(rwy) {
-    
+
     const speed = this.metar['Wind-Speed'];
 
     let angularDifference = Math.min(this.getAngularDifference(rwy.ident1),this.getAngularDifference(rwy.ident2));
@@ -43,13 +43,8 @@ export class WindComponent implements OnInit {
     if (direction ==='VRB'){
       return 90;
     }
-    if(diff<0){
-      return diff+360
-    }else if (diff>360){
-      return diff-360
-    } else {
-      return diff;
-    }
+    return Math.abs(diff);
+
   }
   getHeadwind(rwy) {
     const direction = this.metar['Wind-Direction'];
