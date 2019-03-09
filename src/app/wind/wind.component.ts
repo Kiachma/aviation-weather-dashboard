@@ -34,29 +34,29 @@ export class WindComponent implements OnInit {
     const speed = this.metar['Wind-Speed'];
 
     let angularDifference = Math.min(this.getAngularDifference(rwy.ident1),this.getAngularDifference(rwy.ident2));
-    return Math.ceil(speed*Math.sin(angularDifference* Math.PI / 180));
+    return Math.ceil(speed*Math.sin(angularDifference));
 
   }
   getAngularDifference(rwyDirection){
     const direction = this.metar['Wind-Direction'];
-    let diff = parseInt(rwyDirection+0)-direction;
+    let diff = parseInt(rwyDirection+0)* Math.PI / 180-direction;
     if (direction ==='VRB'){
-      return 90;
+      return Math.PI/2;
     }
-    return Math.abs(diff);
+    return diff;
 
   }
   getHeadwind(rwy) {
-    const direction = this.metar['Wind-Direction'];
+    const direction = this.metar['Wind-Direction']* Math.PI / 180;
     const speed = this.metar['Wind-Speed'];
-    let angularDifference = Math.min(this.getAngularDifference(rwy.ident1),this.getAngularDifference(rwy.ident2));
-    return Math.floor(speed*Math.cos(angularDifference* Math.PI / 180));
+    let angularDifference = this.getAngularDifference(this.getRwyInUse(rwy));
+    return -Math.floor(speed*Math.cos(angularDifference));
 
   }
   getRwyInUse(rwy){
     const direction = this.metar['Wind-Direction'];
 
-    if(this.getAngularDifference(rwy.ident1)>this.getAngularDifference(rwy.ident2)){
+    if(Math.abs(this.getAngularDifference(rwy.ident1))>Math.abs(this.getAngularDifference(rwy.ident2))){
       return rwy.ident2
     }else{
       return rwy.ident1
