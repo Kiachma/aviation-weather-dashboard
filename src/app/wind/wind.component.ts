@@ -1,6 +1,6 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { RestService } from '../rest.service';
-
+import * as angles from 'angles'
 @Component({
   selector: 'app-wind',
   templateUrl: './wind.component.html',
@@ -15,6 +15,7 @@ export class WindComponent implements OnInit {
   constructor(public rest: RestService) { }
 
   ngOnInit() {
+    angles.SCALE = 360;
     this.getMetar();
     this.getAerodromeInfo();
   }
@@ -33,34 +34,32 @@ export class WindComponent implements OnInit {
 
     const speed = this.metar['Wind-Speed'];
 
-    let angularDifference = Math.min(this.getAngularDifference(rwy.ident1),this.getAngularDifference(rwy.ident2));
-    return Math.ceil(speed*Math.sin(angularDifference));
+    const angularDifference = Math.min(this.getAngularDifference(rwy.ident1), this.getAngularDifference(rwy.ident2));
+    return Math.ceil(speed * Math.sin(angularDifference));
 
   }
-  getAngularDifference(rwyDirection){
-    const direction = this.metar['Wind-Direction'];
-    let diff = parseInt(rwyDirection+0)* Math.PI / 180-direction;
-    if (direction ==='VRB'){
-      return Math.PI/2;
+  getAngularDifference(rwyDirection) {
+    let direction = this.metar['Wind-Direction'];
+    if (direction === 'VRB') {
+      return 90* Math.PI / 180;
+    } else {
+      direction = angles.normalize(direction);
     }
-    return diff;
+    const diff = angles.diff(angles.normalize(parseInt(rwyDirection.replace(/[^0-9]/, '') + 0)) , direction);
+    return Math.abs(diff)* Math.PI / 180;
 
   }
   getHeadwind(rwy) {
-    const direction = this.metar['Wind-Direction']* Math.PI / 180;
     const speed = this.metar['Wind-Speed'];
-    let angularDifference = this.getAngularDifference(this.getRwyInUse(rwy));
-    return -Math.floor(speed*Math.cos(angularDifference));
+    const angularDifference = this.getAngularDifference(this.getRwyInUse(rwy));
+    return Math.floor(speed * Math.cos(angularDifference));
 
   }
   getRwyInUse(rwy){
-    const direction = this.metar['Wind-Direction'];
-
-    if(Math.abs(this.getAngularDifference(rwy.ident1))>Math.abs(this.getAngularDifference(rwy.ident2))){
-      return rwy.ident2
-    }else{
-      return rwy.ident1
+    if (Math.abs(this.getAngularDifference(rwy.ident1)) > Math.abs(this.getAngularDifference(rwy.ident2))) {
+      return rwy.ident2;
+    } else{
+      return rwy.ident1;
     }
   }
 }
-

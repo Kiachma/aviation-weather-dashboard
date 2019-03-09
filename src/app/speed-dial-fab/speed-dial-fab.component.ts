@@ -3,7 +3,12 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AirportsService } from '../airports.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material';
-
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
+import AirportMapping from '../../assets/AirportMapping.json';
+import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material';
+import { ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-speed-dial-fab',
@@ -11,7 +16,6 @@ import {MatChipInputEvent} from '@angular/material';
   styleUrls: ['./speed-dial-fab.component.scss']
 })
 export class SpeedDialFabComponent {
-
 
   constructor(public dialog: MatDialog) {
    }
@@ -33,12 +37,22 @@ export class SpeedDialFabComponent {
   templateUrl: 'edit-airports-dialog.html',
 })
 export class EditAirportsDialogComponent {
-  constructor( public dialogRef: MatDialogRef<EditAirportsDialogComponent>, public airportService: AirportsService) {}
+  constructor( public dialogRef: MatDialogRef<EditAirportsDialogComponent>, public airportService: AirportsService) {
+    this.filteredAirports = this.airportCtrl.valueChanges.pipe(
+        startWith(null),
+        map((airport: string | null) => airport ? this._filter(airport) : Object.keys(AirportMapping).slice()));
+  }
+  airportCtrl = new FormControl();
+  filteredAirports: Observable<string[]>;
 
   visible = true;
   selectable = false;
   removable = true;
   addOnBlur = true;
+
+  @ViewChild('airportInput') airportInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   onNoClick(): void {
     this.dialogRef.close();
@@ -49,21 +63,39 @@ export class EditAirportsDialogComponent {
   }
 
   add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
 
-     // Add our fruit
-    if ((value || '').trim()) {
-       this.airportService.airports.push(value.trim().toUpperCase());
-    }
+    if (!this.matAutocomplete.isOpen) {
+      const input = event.input;
+      const value = event.value;
 
-    // Reset the input value
-    if (input) {
-      input.value = '';
+       // Add our fruit
+      if ((value || '').trim()) {
+         this.airportService.airports.push(value.trim().toUpperCase());
+      }
+
+      // Reset the input value
+      if (input) {
+        input.value = '';
+      }
+       this.airportCtrl.setValue(null);
     }
   }
 
-  remove(i): void {
-    this.airportService.airports.splice(i, 1);
+  remove(airport): void {
+    const index = this.airportService.airports.indexOf(airport);
+
+    if (index >= 0) {
+      this.airportService.airports.splice(index, 1);
+    }
+  }
+  selected(event: MatAutocompleteSelectedEvent): void {
+    this.airportService.airports.push(event.option.viewValue);
+    this.airportInput.nativeElement.value = '';
+    this.airportCtrl.setValue(null);
+  }
+  private _filter(value: string): string[] {
+    const filterValue = value.toUpperCase();
+
+    return Object.keys(AirportMapping).filter(airport => airport.toUpperCase().indexOf(filterValue) === 0);
   }
 }

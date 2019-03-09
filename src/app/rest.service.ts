@@ -30,10 +30,10 @@ export class RestService {
     return this.http.get(endpoint + 'taf/' + id + '?options=&format=json&onfail=cache').pipe(
       map(this.extractData));
   }
-  @Cacheable()
   getSigmet(): Observable<any> {
     console.log("Get sigmet");
-    return this.http.get('https://api.met.no/weatherapi/sigmets/1.0/', {responseType: 'text'});
+    return this.http.get('https://api.met.no/weatherapi/sigmets/1.0/', {responseType: 'text'}).pipe(
+     );
   }
   @Cacheable()
   getAerodromeInfo(id): Observable<any> {

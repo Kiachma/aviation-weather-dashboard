@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from '../rest.service';
-
+import {interval} from "rxjs/internal/observable/interval";
+import {startWith, switchMap} from "rxjs/operators";
 @Component({
   selector: 'app-metar',
   templateUrl: './metar.component.html',
@@ -13,10 +14,12 @@ export class MetarComponent implements OnInit {
   constructor(public rest: RestService) { }
 
   ngOnInit() {
-      this.getMetar();
-  }
-  getMetar() {
-    this.rest.getMetar(this.icao).subscribe((data: {}) => {
+    interval(30000)
+      .pipe(
+        startWith(0),
+        switchMap(() =>this.rest.getMetar(this.icao))
+      )
+      .subscribe((data: {}) => {
       this.metar = data;
       if (this.icao === 'ENTO') {
         if (data['Flight-Rules'] !== 'VFR') {
@@ -25,4 +28,5 @@ export class MetarComponent implements OnInit {
       }
     });
   }
+
 }

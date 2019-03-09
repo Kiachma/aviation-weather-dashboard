@@ -8,10 +8,19 @@
     </mat-chip>
     <input placeholder="Enter ICAO code"
            [matChipInputFor]="chipList"
+           #airportInput
+           [formControl]="airportCtrl"
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [matChipInputAddOnBlur]="addOnBlur"
+           [matAutocomplete]="auto"
            (matChipInputTokenEnd)="add($event)">
   </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let airport of filteredAirports | async" [value]="airport">
+      {{airport}}
+    </mat-option>
+  </mat-autocomplete>
+  </mat-form-field>
   <h3>Visible</h3>
   <mat-slide-toggle
     [(ngModel)]="airportService.visible.sigmet">
@@ -26,7 +35,7 @@
   <mat-slide-toggle
   [(ngModel)]="airportService.visible.radar"
           >
-    Radar image
+    YR (Rain)
   </mat-slide-toggle>
   <mat-slide-toggle
   [(ngModel)]="airportService.visible.ceiling"
@@ -41,7 +50,7 @@
    <mat-slide-toggle
   [(ngModel)]="airportService.visible.lightning"
           >
-    Windy (Lightning)
+    YR (Lightning)
   </mat-slide-toggle>
-</mat-form-field>
+
 

@@ -2,7 +2,9 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { RestService } from '../rest.service';
 import { latLng, tileLayer, circle, polygon,control } from 'leaflet';
 import moment from 'moment';
-import {Map } from 'leaflet'
+import {Map } from 'leaflet';
+import {interval} from "rxjs/internal/observable/interval";
+import {startWith, switchMap} from "rxjs/operators";
 @Component({
   selector: 'app-sigmet',
   templateUrl: './sigmet.component.html',
@@ -37,14 +39,23 @@ export class SigmetComponent implements OnInit {
      }, 1000);
  }
   ngOnInit() {
-      this.getSigmet();
+    interval(5000)
+      .pipe(
+        startWith(0),
+        switchMap(() =>this.rest.getSigmet())
+      )
+      .subscribe((data: {}) => this.getSigmet(data));
   }
-  getSigmet() {
-    this.rest.getSigmet().subscribe(data => {
+  getSigmet(data) {
+   
       this.raw = data.replace(/^\s*\n/gm, ' ');
       this.raw = data.replace(/\s\s+/g, ' ');
       var matches = [];
       var output = [];
+      for (var i = 0; i < this.sigmets.length; i++) {
+        this.leafletMap.removeLayer(this.sigmets[i]);
+      }
+      this.sigmets = [];
       while (matches = this.re.exec(this.raw)) {
         const sigmet = {
           location: matches[1],
@@ -79,7 +90,7 @@ export class SigmetComponent implements OnInit {
           sigmetPoly.setStyle({color: '#B71C1C'});
         }
         if (moment().isBetween(sigmet.startTime, sigmet.endTime)) {
-          this.sigmets.push(sigmet);
+          this.sigmets.push(sigmetPoly);
           this.leafletMap.addLayer(sigmetPoly);
           sigmetPoly.bindTooltip(sigmet.sequence,
            {permanent: true, direction:"center"}
@@ -88,8 +99,6 @@ export class SigmetComponent implements OnInit {
         }
 
       }
-      console.log(this.sigmets);
-    });
   }
   parseLat(lat) {
 
