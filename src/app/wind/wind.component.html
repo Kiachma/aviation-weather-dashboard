@@ -1,5 +1,7 @@
-<div *ngIf="info.hasOwnProperty('runways')">
+<span *ngIf="info.hasOwnProperty('runways') && metar.hasOwnProperty('wind_speed')">
     <span *ngFor="let rwy of info.runways" >
+    	<span *ngIf="getHeadwind(rwy) != 'null' && getCrosswind(rwy) != 'null'">
        RWY {{getRwyInUse(rwy)}}:  <span class="icon"><mat-icon [inline]="true">arrow_downward</mat-icon></span> {{getHeadwind(rwy)}} kts <span class="icon"><mat-icon [inline]="true">arrow_forward</mat-icon></span> {{getCrosswind(rwy)}} kts
+   </span>
     </span>
-</div>
+</span>

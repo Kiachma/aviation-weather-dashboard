@@ -1,5 +1,5 @@
-<mat-form-field class="example-chip-list">
   <h3>Airports</h3>
+  <mat-form-field class="example-chip-list">
   <mat-chip-list #chipList>
     <mat-chip *ngFor="let airport of airportService.airports; let i = index" [selectable]="selectable"
              [removable]="removable" (removed)="deleteAirport(i)">
@@ -36,6 +36,11 @@
   [(ngModel)]="airportService.visible.radar"
           >
     YR (Rain)
+  </mat-slide-toggle>
+  <mat-slide-toggle
+  [(ngModel)]="airportService.visible.clouds"
+          >
+    Windy (Clouds)
   </mat-slide-toggle>
   <mat-slide-toggle
   [(ngModel)]="airportService.visible.ceiling"

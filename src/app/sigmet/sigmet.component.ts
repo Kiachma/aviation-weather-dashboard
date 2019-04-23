@@ -1,6 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, Input } from '@angular/core';
 import { RestService } from '../rest.service';
-import { latLng, tileLayer, circle, polygon,control } from 'leaflet';
+import { LatLng, tileLayer, circle, polygon, control } from 'leaflet';
 import moment from 'moment';
 import {Map } from 'leaflet';
 import {interval} from "rxjs/internal/observable/interval";
@@ -14,6 +14,9 @@ export class SigmetComponent implements OnInit {
   constructor(public rest: RestService,private zone: NgZone) {
 
   }
+  @Input() lat: number 
+  @Input() lng: number 
+
   re = /([A-Z]{4}) (AIRMET|SIGMET|WS WRNG) (\w{1,3})\s?\d{0,6}\s?VALID (\d{6}\/\d{6}) [\s\S]*?(.+?)(?:(\w\d{4} \w\d{5}(?: - )?)*)= NNNN/gm;
   positionRe = /(\w\d{4}) (\w\d{5})/gm
   raw  = null;
@@ -26,19 +29,26 @@ export class SigmetComponent implements OnInit {
   options = {
     layers: [this.streetMaps],
     zoom: 5,
-    center: latLng(59.1846935, 10.2519786)
-  };
-  
+    center:new LatLng(59.1923975,9.9688713 )
+    
+  };  
 
+    zoom : number;
+    center : LatLng;
   
   onMapReady(map: Map) {
     // assing map to a variable that we can manipulate
     this.leafletMap = map;
+    
     setTimeout(function(){
-        map.invalidateSize();
+
+        map.invalidateSize();        
      }, 1000);
+
  }
   ngOnInit() {
+    this.center = new LatLng(this.lat,this.lng);
+
     interval(5000)
       .pipe(
         startWith(0),
@@ -82,19 +92,25 @@ export class SigmetComponent implements OnInit {
         let sigmetPoly =  polygon(sigmet.positions).bindPopup(sigmet.full);
        
         if(sigmet.identifier === 'AIRMET') {
-          sigmetPoly.setStyle({fillColor: '#1A237E'});
-          sigmetPoly.setStyle({color: '#1A237E'});
+          if (moment().isBefore(sigmet.startTime)) {
+             sigmetPoly.setStyle({fillColor: '#1565C0'});
+          }
+          sigmetPoly.setStyle({color: '#1565C0'});
 
         } else if (sigmet.identifier === 'SIGMET') {
-          sigmetPoly.setStyle({fillColor: '#B71C1C'});
-          sigmetPoly.setStyle({color: '#B71C1C'});
+          if (moment().isBefore(sigmet.startTime)) {
+            sigmetPoly.setStyle({fillColor: '#E53935'});
+          }
+          sigmetPoly.setStyle({color: '#E53935'});
         }
-        if (moment().isBetween(sigmet.startTime, sigmet.endTime)) {
+        if (moment().isBefore(sigmet.endTime)) {
           this.sigmets.push(sigmetPoly);
           this.leafletMap.addLayer(sigmetPoly);
-          sigmetPoly.bindTooltip(sigmet.sequence,
+          let tooltip = sigmetPoly.bindTooltip(sigmet.sequence,
            {permanent: true, direction:"center"}
-          ).openTooltip()
+          )
+
+          tooltip.openTooltip();
           //this.layersControl.overlays[sigmet.identifier + ' ' + sigmet.sequence] = sigmetPoly;
         }
 

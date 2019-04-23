@@ -1,11 +1,15 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-      <span  class="mat-body-1">
-        <app-metar [icao]="'ENTO'"></app-metar>
-        <app-taf  [icao]="'ENTO'"></app-taf>
+<mat-toolbar color="primary">
+  <mat-toolbar-row >
+      <span  class="mat-body-1" fxShow fxHide.xs="true" fxHide.lg="false">
+        <div>
+          <app-metar [icao]="'ENTO'"></app-metar>
+        </div>
+        <div>
+          <app-taf  [icao]="'ENTO'"></app-taf>
+        </div>
       </span >
       <span class="spacer"></span>
-      <a fxShow fxHide.xs="true" href="http://100ll.kiachma.webfactional.com">100ll.kiachma.webfactional.com</a>
+      <span class="md-accent"  >100ll.kiachma.webfactional.com</span>
     </mat-toolbar-row>  
 
 </mat-toolbar >

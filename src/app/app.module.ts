@@ -16,7 +16,19 @@ import { SigmetComponent } from './sigmet/sigmet.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import {FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WindComponent } from './wind/wind.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NotamComponent } from './notam/notam.component';
+import { CivilTwilightComponent } from './civil-twilight/civil-twilight.component';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer} from '@angular/platform-browser';
 
+@Pipe({ name: 'safe' })
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) {}
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+} 
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +38,15 @@ import { WindComponent } from './wind/wind.component';
     SpeedDialFabComponent,
     EditAirportsDialogComponent,
     SigmetComponent,
-    WindComponent
+    WindComponent,
+    NotamComponent,
+    CivilTwilightComponent,
+    SafePipe
   ],
   entryComponents: [EditAirportsDialogComponent],
   imports: [
     BrowserModule,
+    FlexLayoutModule ,
     FormsModule ,
     AppRoutingModule,
     HttpClientModule,

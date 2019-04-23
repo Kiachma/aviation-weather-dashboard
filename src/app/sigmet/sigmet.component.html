@@ -1,6 +1,8 @@
-<div class="map" style="height: 350px;"
+<div class="map mat-card-image" style="margin-top:0px"
             leaflet 
             [leafletOptions]="options"
+            [(leafletZoom)]="zoom"
+    		[(leafletCenter)]="center"
             (leafletMapReady)="onMapReady($event)">
             
 </div>

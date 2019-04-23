@@ -1,3 +1,3 @@
-<div  style="text-align: left" class="mat-body-1"  class="fill-remaining-space" [ngClass]="{'VFR': metar['Flight-Rules']=='VFR', 'MVFR':  metar['Flight-Rules']=='MVFR', 'IFR':  metar['Flight-Rules']=='IFR', 'LIFR': metar['Flight-Rules']=='LIFR'}">
-	{{metar["Sanitized"]}}
+<div *ngIf="metar.length" style="text-align: left" class="mat-body-1"  class="fill-remaining-space" [ngClass]="{'VFR': metar['flight_rules']=='VFR', 'MVFR':  metar['flight_rules']=='MVFR', 'IFR':  metar['flight_rules']=='IFR', 'LIFR': metar['flight_rules']=='LIFR'}">
+	METAR: {{metar[metar.length-1]['metno:metarText']}}
 </div>

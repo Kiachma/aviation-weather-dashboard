@@ -21,12 +21,11 @@ export class TafComponent implements OnInit {
         switchMap(() =>this.rest.getTaf(this.icao))
       )
       .subscribe((data: {}) => {
-      this.taf = data;
+      this.taf = data['metno:aviationProducts']['metno:terminalAerodromeForecast'];
+      if (this.taf.hasOwnProperty('length')){
+          this.taf = this.taf[this.taf['length']-1]
+      }
     });
   }
-  getTaf() {
-    this.rest.getTaf(this.icao).subscribe((data: {}) => {
-      this.taf = data;
-    });
-  }
+
 }

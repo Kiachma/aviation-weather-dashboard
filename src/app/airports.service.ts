@@ -5,14 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class AirportsService {
   constructor() { }
-  airports = ['ENTO', 'ENNO','ENGK','ENCN'];
+  airports = ['ENTO', 'ENCN','ENRY','ENNO','ENGK',];
   visible = {
     sigmet: true,
     sigchart: true,
     radar: true,
-    ceiling: true,
-    visibility: true,
+    ceiling: false,
+    visibility: false,
     airportCards:true,
-    lightning: false
+    lightning: false,
+    clouds:true
   };
 }

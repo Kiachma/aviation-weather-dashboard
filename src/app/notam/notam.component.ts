@@ -2,25 +2,29 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from '../rest.service';
 import {interval} from "rxjs/internal/observable/interval";
 import {startWith, switchMap} from "rxjs/operators";
+
 @Component({
-  selector: 'app-metar',
-  templateUrl: './metar.component.html',
-  styleUrls: ['./metar.component.scss'],
-  providers: [RestService]
+  selector: 'app-notam',
+  templateUrl: './notam.component.html',
+  styleUrls: ['./notam.component.scss']
 })
-export class MetarComponent implements OnInit {
+export class NotamComponent implements OnInit {
+
   @Input() icao: any;
-  metar = {};
+  notams = {};
   constructor(public rest: RestService) { }
 
   ngOnInit() {
-    interval(30000)
+     interval(30000)
       .pipe(
         startWith(0),
-        switchMap(() =>this.rest.getTaf(this.icao))
+        switchMap(() =>this.rest.getNotam(this.icao))
       )
       .subscribe((data: {}) => {
-      this.metar = data['metno:aviationProducts']['metno:meteorologicalAerodromeReport'];
+        if(data.hasOwnProperty('rows')){
+          this.notams = data['rows'];
+        }
+      
     });
   }
 
