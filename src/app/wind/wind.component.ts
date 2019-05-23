@@ -1,6 +1,8 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { RestService } from '../rest.service';
-import * as angles from 'angles'
+import * as angles from 'angles';
+import AirportMapping from '../../assets/AirportMapping.json';
+
 @Component({
   selector: 'app-wind',
   templateUrl: './wind.component.html',
@@ -43,7 +45,16 @@ export class WindComponent implements OnInit {
   getAerodromeInfo() {
     this.rest.getAerodromeInfo(this.icao).subscribe((data: {}) => {
       this.info = data;
-      console.log(data);
+      if (!this.info.hasOwnProperty('runways')){
+        this.info = {
+          runways:[
+            {
+              ident1:AirportMapping[this.icao].rwyDeg[0],
+              ident2:AirportMapping[this.icao].rwyDeg[1]
+            }
+          ]
+        };
+      }
     });
   }
   getCrosswind(rwy) {

@@ -290,7 +290,9 @@
     "url": "Norge/Telemark/Notodden/Notodden_flyplass,_Tuven/"
   },
   "ENGK": {
-    "url": "Norge/Aust-Agder/Froland/Gullknapp/"
+    "url": "Norge/Aust-Agder/Froland/Gullknapp/",
+    "elev": "415" ,
+    "rwyDeg": ["23", "05"]
   },
   "ENKJ": {
     "url": "Norge/Akershus/Skedsmo/Kjeller_flyplass/"

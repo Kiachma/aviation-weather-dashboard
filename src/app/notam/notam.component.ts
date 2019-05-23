@@ -14,17 +14,9 @@ export class NotamComponent implements OnInit {
   notams = {};
   constructor(public rest: RestService) { }
 
-  ngOnInit() {
-     interval(30000)
-      .pipe(
-        startWith(0),
-        switchMap(() =>this.rest.getNotam(this.icao))
-      )
-      .subscribe((data: {}) => {
-        if(data.hasOwnProperty('rows')){
-          this.notams = data['rows'];
-        }
-      
+  ngOnInit() {  
+    this.rest.getNotam(this.icao).subscribe((data: {}) => {
+      this.notams =data;
     });
   }
 

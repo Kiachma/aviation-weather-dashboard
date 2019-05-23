@@ -22,6 +22,7 @@ export class RestService {
     const body = res;
     return body || { };
   }
+
   private parseXml(res: string){
     const body = res;
     const parser = new DOMParser();
@@ -52,16 +53,16 @@ export class RestService {
     return this.http.get(endpoint + 'station/' + id + '?options=&format=json&onfail=cache').pipe(
       map(this.extractData));
   }
+
   @Cacheable()
   getNotam(id): Observable<any> {
-    return this.http.get(encodeURI('https://api.autorouter.aero/v1.0/notam?itemas=["'+id+'"]&offset=0&limit=100')).pipe(
-    )
+    return this.http.get('https://api.autorouter.aero/v1.0/notam?itemas=["'+id+'"]&offset=0&limit=100').pipe(
+       map(this.extractData));
   }
   getSunInfo(lat,lng): Observable<any> {
     return this.http.get('https://api.sunrise-sunset.org/json?lat='+lat+'&lng='+lng+'&formatted=0').pipe(
       map(this.extractData));
   }
-  
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

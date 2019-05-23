@@ -10,7 +10,7 @@ import {startWith, switchMap} from "rxjs/operators";
 })
 export class MetarComponent implements OnInit {
   @Input() icao: any;
-  metar = {};
+  metar = {length:null};
   constructor(public rest: RestService) { }
 
   ngOnInit() {
